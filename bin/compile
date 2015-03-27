@@ -144,7 +144,7 @@ bpwatch stop restore_cache
 SWIG_VERSION=2.0.5 # The swig version we are supporting
 SWIG_SRC=".p22swig" # The name of the directory this will live in
 S3_BUCKET=p22-heroku-buildpacks/libraries 
-SWIG_SOURCE_URL=https://s3.amazonaws.com/${S3_BUCKET}/swig.${SWIG_VERSION}.tar.gz
+SWIG_SOURCE_URL=https://s3.amazonaws.com/$S3_BUCKET/swig.$SWIG_VERSION.tar.gz
 CACHED_SWIG=$CACHE_DIR/$SWIG_SRC
 
 # Install SWIG
@@ -167,7 +167,7 @@ PATH=$PATH:$BUILD_DIR/$SWIG_SRC/swig/bin/
 export PATH
 echo $PATH | indent
 echo "setting SWIG_LIB environment var"
-export SWIG_LIB=$BUILD_DIR/$SWIG_SRC/swig/share/swig/2.0.5/
+export SWIG_LIB=$BUILD_DIR/$SWIG_SRC/swig/share/swig/$SWIG_VERSION/
 
 
 set +e
