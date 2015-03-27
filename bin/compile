@@ -141,6 +141,10 @@ bpwatch start restore_cache
   done
 bpwatch stop restore_cache
 
+
+# Install SWIG
+source $BIN_DIR/steps/swig
+
 set +e
 # Create set-aside `.heroku` folder.
 mkdir .heroku &> /dev/null
