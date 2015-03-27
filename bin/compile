@@ -141,10 +141,6 @@ bpwatch start restore_cache
   done
 bpwatch stop restore_cache
 
-
-# Install SWIG
-source $BIN_DIR/steps/swig
-
 set +e
 # Create set-aside `.heroku` folder.
 mkdir .heroku &> /dev/null
@@ -170,12 +166,17 @@ source $BIN_DIR/steps/pylibmc
 # Libffi support.
 source $BIN_DIR/steps/cryptography
 
+# Swig support.
+source $BIN_DIR/steps/swig
+
 # Install dependencies with Pip.
 source $BIN_DIR/steps/pip-install
 
 # Django collectstatic support.
 sub-env $BIN_DIR/steps/collectstatic
 
+#Debug Only
+echo "Swig Env: $SWIG_LIB"
 
 # ### Finalize
 #

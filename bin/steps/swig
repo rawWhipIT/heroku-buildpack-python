@@ -15,13 +15,17 @@ if [ ! -d $CACHED_SWIG ]; then
     echo "** SWIG not found in cache - installing" | indent
     puts-step "Fetching and installing SWIG 2 from $SWIG_SOURCE_URL"
     mkdir -p $CACHED_SWIG
-    curl $SWIG_SOURCE_URL | tar zxv -C $CACHED_SWIG &> /dev/null
-    if [ ! -d $CACHED_SWIG ]; then
-      puts-warn "WARNING: SWIG not downloaded or installed properly"
-      exit 1
-    else
-      echo "SWIG $SWIG_VERSION installed" | indent
-    fi
+    #curl $SWIG_SOURCE_URL | tar zxv -C $CACHED_SWIG &> /dev/null
+    curl -O $SWIG_SOURCE_URL >/dev/null 2>&1
+    tar xzvf swig.${SWIG_VERSION}.tar.gz >/dev/null 2>&1
+    mv swig $CACHED_SWIG
+    rm swig.${SWIG_VERSION}.tar.gz
+    # if [ ! -d $CACHED_SWIG ]; then
+    #   puts-warn "WARNING: SWIG not downloaded or installed properly"
+    #   exit 1
+    # else
+    #   echo "SWIG $SWIG_VERSION installed" | indent
+    # fi
 else
     echo "SWIG $SWIG_VERSION detected in the cache" | indent
 fi
