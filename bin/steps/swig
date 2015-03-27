@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-# Syntax sugar.
-source $BIN_DIR/utils
 puts-step "Configuring SWIG"
 
 # Setup Conf Variables
