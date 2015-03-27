@@ -153,9 +153,9 @@ if [ ! -d $CACHE_DIR/swig ]; then
   echo "-----> Fetching and installing SWIG 2 from $SWIG_SOURCE_URL"
   curl -O $SWIG_SOURCE_URL >/dev/null 2>&1
   echo "-----> Installing ..."
-  tar xzvf swig.tar.gz >/dev/null 2>&1
+  tar xzvf swig.$SWIG_VERSION.tar.gz >/dev/null 2>&1
   mv swig $CACHE_DIR/swig
-  rm swig.tar.gz
+  rm swig.$SWIG_VERSION.tar.gz
   echo "SWIG installed" | indent
 fi
 
