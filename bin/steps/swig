@@ -32,7 +32,7 @@ puts-step "Making $SWIG_SRC folder and copying source from $CACHED_SWIG"
 mkdir -p $SWIG_SRC
 cp -R $CACHED_SWIG/ $SWIG_SRC
 echo "Updating path...." | indent
-PATH=$PATH:$BUILD_DIR/$SWIG_SRC/swig/bin/
+PATH=$PATH:$BUILD_DIR/$SWIG_SRC/swig/bin
 export PATH
 echo "Path: $PATH" | indent
 echo "Setting SWIG_LIB" | indent
