@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 puts-step "Configuring SWIG"
-
+echo "SWIG Build Step Version: 2" | indent
 # Setup Conf Variables
 SWIG_VERSION=2.0.5 # The swig version we are supporting
 SWIG_SRC=.swig_${SWIG_VERSION} # The name of the directory this will live in
